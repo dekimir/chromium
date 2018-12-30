@@ -1,0 +1,16 @@
+import("//testing/test.gni")
+
+test("ramfuzz_tests") {
+  sources = [
+    "rftest1.cc",
+    "ramfuzz-rt.hpp",
+  ]
+
+  configs += [ "//build/config:precompiled_headers" ]
+  defines = []
+
+  deps = [
+    "//net",
+    "//third_party/zmqpp:zmqpp"
+  ]
+}

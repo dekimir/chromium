@@ -68,6 +68,7 @@ group("gn_all") {
     "//base:base_unittests",
     "//chrome/installer",
     "//net:net_unittests",
+    "//testing/ramfuzz:ramfuzz_tests",
     "//skia:skia_unittests",
     "//sql:sql_unittests",
     "//tools/binary_size:binary_size_trybot_py",

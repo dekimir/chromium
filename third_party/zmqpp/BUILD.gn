@@ -1,0 +1,57 @@
+config("zmqpp_config") {
+  include_dirs = [ "./src" ]
+  libs = [ "zmq" ]
+  cflags_cc = [ "-fexceptions" ]
+}
+
+static_library("zmqpp") {
+  sources = [
+    "src/zmqpp/actor.hpp",
+    "src/zmqpp/auth.cpp",
+    "src/zmqpp/auth.hpp",
+    "src/zmqpp/byte_ordering.hpp",
+    "src/zmqpp/compatibility.hpp",
+    "src/zmqpp/context.cpp",
+    "src/zmqpp/context.hpp",
+    "src/zmqpp/context_options.hpp",
+    "src/zmqpp/curve.cpp",
+    "src/zmqpp/curve.hpp",
+    "src/zmqpp/exception.hpp",
+    "src/zmqpp/frame.cpp",
+    "src/zmqpp/frame.hpp",
+    "src/zmqpp/inet.hpp",
+    "src/zmqpp/loop.cpp",
+    "src/zmqpp/loop.hpp",
+    "src/zmqpp/message.cpp",
+    "src/zmqpp/message.hpp",
+    "src/zmqpp/poller.cpp",
+    "src/zmqpp/poller.hpp",
+    "src/zmqpp/proxy.cpp",
+    "src/zmqpp/proxy.hpp",
+    "src/zmqpp/proxy_steerable.cpp",
+    "src/zmqpp/proxy_steerable.hpp",
+    "src/zmqpp/reactor.cpp",
+    "src/zmqpp/reactor.hpp",
+    "src/zmqpp/signal.cpp",
+    "src/zmqpp/signal.hpp",
+    "src/zmqpp/socket.cpp",
+    "src/zmqpp/socket.hpp",
+    "src/zmqpp/socket_mechanisms.hpp",
+    "src/zmqpp/socket_options.hpp",
+    "src/zmqpp/socket_types.hpp",
+    "src/zmqpp/z85.cpp",
+    "src/zmqpp/z85.hpp",
+    "src/zmqpp/zap_request.cpp",
+    "src/zmqpp/zap_request.hpp",
+    "src/zmqpp/zmqpp.cpp",
+    "src/zmqpp/zmqpp.hpp",
+  ]
+
+  defines = []
+  deps = []
+
+#  configs -= [ "//build/config/compiler:chromium_code" ]
+#  configs += [ "//build/config/compiler:no_chromium_code" ]
+
+  public_configs = [ ":zmqpp_config" ]
+}
