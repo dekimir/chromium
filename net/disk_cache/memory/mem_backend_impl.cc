@@ -46,11 +46,14 @@ bool CheckLRUListOrder(const base::LinkedList<MemEntryImpl>& lru_list) {
 base::LinkNode<MemEntryImpl>* NextSkippingChildren(
     const base::LinkedList<MemEntryImpl>& lru_list,
     base::LinkNode<MemEntryImpl>* node) {
+  return node->next();
+#if 0
   MemEntryImpl* cur = node->value();
   do {
     node = node->next();
   } while (node != lru_list.end() && node->value()->parent() == cur);
   return node;
+#endif	// 0
 }
 
 }  // namespace
