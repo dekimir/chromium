@@ -2,6 +2,8 @@ import("//testing/test.gni")
 
 test("ramfuzz_tests") {
   sources = [
+    "fuzz.cpp",
+    "fuzz.hpp",
     "rftest1.cc",
     "ramfuzz-rt.hpp",
   ]
